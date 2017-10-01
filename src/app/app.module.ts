@@ -7,7 +7,15 @@ import {HomeComponent} from './pages/home/home.component';
 import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
 import {AuthService} from './auth/auth.service';
-import { CallbackComponent } from './pages/callback/callback.component';
+import {CallbackComponent} from './pages/callback/callback.component';
+import {HttpClientModule} from '@angular/common/http';
+import {ApiService} from './core/api.service';
+import {LoadingComponent} from './core/loading.component';
+import {DatePipe} from '@angular/common';
+import {UtilsService} from './core/utils.service';
+import {FilterSortService} from './core/filter-sort.service';
+import {FormsModule} from '@angular/forms';
+import { AdminComponent } from './pages/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -16,14 +24,22 @@ import { CallbackComponent } from './pages/callback/callback.component';
     HeaderComponent,
     FooterComponent,
     CallbackComponent,
+    LoadingComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [
     Title,
     AuthService,
+    ApiService,
+    DatePipe,
+    UtilsService,
+    FilterSortService,
   ],
   bootstrap: [AppComponent],
 })
