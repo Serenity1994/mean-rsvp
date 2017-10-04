@@ -38,7 +38,6 @@ export class HomeComponent implements OnInit, OnDestroy {
       .getEvents$()
       .subscribe(
         res => {
-          console.log(res);
           this.eventList = res;
           this.filteredEvents = res;
           this.loading = false;

@@ -15,7 +15,13 @@ import {DatePipe} from '@angular/common';
 import {UtilsService} from './core/utils.service';
 import {FilterSortService} from './core/filter-sort.service';
 import {FormsModule} from '@angular/forms';
-import { AdminComponent } from './pages/admin/admin.component';
+import {AdminComponent} from './pages/admin/admin.component';
+import {EventComponent} from './pages/event/event.component';
+import {EventDetailComponent} from './pages/event/event-detail/event-detail.component';
+import {RsvpComponent} from './pages/event/rsvp/rsvp.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { RsvpFormComponent } from './pages/event/rsvp/rsvp-form/rsvp-form.component';
+import { SubmittingComponent } from './core/forms/submitting.component';
 
 @NgModule({
   declarations: [
@@ -26,12 +32,18 @@ import { AdminComponent } from './pages/admin/admin.component';
     CallbackComponent,
     LoadingComponent,
     AdminComponent,
+    EventComponent,
+    EventDetailComponent,
+    RsvpComponent,
+    RsvpFormComponent,
+    SubmittingComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     Title,

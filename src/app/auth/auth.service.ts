@@ -80,6 +80,21 @@ export class AuthService {
     });
   }
 
+  private _redirect() {
+    // Redirect with or without 'tab' query parameter
+    // Note: does not support additional qarams besides 'tab'
+    const fullRedirect = decodeURI(localStorage.getItem('authRedirect'));
+    const redirectArr = fullRedirect.split('?tab=');
+    const navArr = [redirectArr[0] || '/'];
+    const tabObj = redirectArr[1] ? { queryParams: { tab: redirectArr[1] }} : null;
+
+    if (!tabObj) {
+      this.router.navigate(navArr);
+    } else {
+      this.router.navigate(navArr, tabObj);
+    }
+  }
+
   private _clearRedirect() {
     // Remove redirect from localStorage
     localStorage.removeItem('authRedirect');
